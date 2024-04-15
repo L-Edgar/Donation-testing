@@ -1,4 +1,4 @@
-# Blood Bank Management System
+# Blood Donation Management System
 ![developer](https://img.shields.io/badge/Developed%20By%20%3A-Edgar%20Liiso-red)
 ---
 ## Screenshots
