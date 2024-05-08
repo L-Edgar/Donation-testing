@@ -15,7 +15,7 @@ from django.contrib.auth import login, authenticate
 from django.shortcuts import get_object_or_404
 from django.http import Http404
 from django.contrib.auth import logout as auth_logout
-from ip2geotools.databases.noncommercial import DbIpCity
+#from ip2geotools.databases.noncommercial import DbIpCity
 
 def donorlogin(request):
     #messages.success(request,'')
