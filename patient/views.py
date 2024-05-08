@@ -98,11 +98,11 @@ def patient_signup_view(request):
                 messages.info(request,"Passwords do not match.")
                 return redirect('patient:patientsignup')
 
-        #else:
-            #print(userForm.errors)
+        else:
+            print(userForm.errors)
     else:
         userForm=forms.CustomUserCreationForm()
-        print('Error 3')
+        print('Error 3', userForm.errors)
     return render(request,'patient/patientsignup.html',{'userForm': userForm})
 
 def complete_registration(request):
