@@ -23,12 +23,12 @@ MEDIA_ROOT=os.path.join(BASE_DIR,'static')
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '+zy!9k=9pql5gz9bkqjore)k6r!%w0atk(@(!(!zvp5e(t2i8n'
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get("DEBUG","False").lower()=="True"
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ")
 
 
 # Application definition
@@ -97,7 +97,9 @@ DATABASES = {
     }
 }
 
-DATABASES['default']=dj_database_url.parse("postgres://blood_donation_hnuh_user:WKqm3EbCbHLWeBw5QhHjGqELGOZQ36Fo@dpg-coeq05gl6cac73c9uqgg-a.oregon-postgres.render.com/blood_donation_hnuh")
+database_url=os.environ.os("DATABASE_URL")
+
+DATABASES['default']=dj_database_url.parse(database_url)
 
 #postgres://blood_donation_hnuh_user:WKqm3EbCbHLWeBw5QhHjGqELGOZQ36Fo@dpg-coeq05gl6cac73c9uqgg-a.oregon-postgres.render.com/blood_donation_hnuh
 
