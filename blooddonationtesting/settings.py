@@ -89,13 +89,9 @@ WSGI_APPLICATION = 'blooddonationtesting.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'Blood Donation',
-        'USER':'postgres',
-        'PASSWORD':'1234',
-        'HOST':'localhost'
-    }
+    "default": dj_database_url.parse(
+        os.environ.get("DATABASE_URL")
+    )
 }
 
 database_url=os.environ.get("DATABASE_URL")
@@ -164,7 +160,7 @@ EMAIL_HOST_PASSWORD = 'xyz' # host email password required
 # https://myaccount.google.com/lesssecureapps
 # otherwise you will get SMTPAuthenticationError at /contactus
 # this process is required because google blocks apps authentication by default
-EMAIL_RECEIVING_USER = ['to@gmail.com'] # email on which you will receive messages sent from website
+EMAIL_RECEIVING_USER = ['lelishaedgar10@gmail.com'] # email on which you will receive messages sent from website
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
