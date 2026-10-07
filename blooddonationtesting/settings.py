@@ -98,7 +98,6 @@ database_url=os.environ.get("DATABASE_URL")
 
 DATABASES['default']=dj_database_url.parse(database_url)
 
-#postgres://blood_donation_hnuh_user:WKqm3EbCbHLWeBw5QhHjGqELGOZQ36Fo@dpg-coeq05gl6cac73c9uqgg-a.oregon-postgres.render.com/blood_donation_hnuh
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
