@@ -17,7 +17,7 @@ import dj_database_url
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATE_DIR = os.path.join(BASE_DIR,'templates')
 STATIC_DIR=os.path.join(BASE_DIR,'static')
-MEDIA_ROOT=os.path.join(BASE_DIR,'static')
+#MEDIA_ROOT=os.path.join(BASE_DIR,'static')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
@@ -26,9 +26,9 @@ MEDIA_ROOT=os.path.join(BASE_DIR,'static')
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get("DEBUG","False").lower()=="True"
+DEBUG = os.environ.get("DEBUG","False")=="True"
 
-ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ")
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS","").split(" ")
 
 
 # Application definition
@@ -88,15 +88,15 @@ WSGI_APPLICATION = 'blooddonationtesting.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = {
-    "default": dj_database_url.parse(
-        os.environ.get("DATABASE_URL")
-    )
-}
+#DATABASES = {
+#    "default": dj_database_url.parse(
+#        os.environ.get("DATABASE_URL")
+#    )
+#}
 
 database_url=os.environ.get("DATABASE_URL")
 
-DATABASES['default']=dj_database_url.parse(database_url)
+#DATABASES['default']=dj_database_url.parse(database_url)
 
 
 # Password validation
