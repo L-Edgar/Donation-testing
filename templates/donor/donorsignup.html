@@ -138,7 +138,11 @@
 
                         <div>
                             <button class="btn btn--radius-2 btn-danger" type="submit">Register</button>
+                            {% for message in messages %}
+                            <h3 style="margin-left: 20%;">{{message}}</h3>
+                            {% endfor %}
                         </div>
+                        
                     </form>
                     <br>
                     <p style="text-align: center;">Already have an account ? <a style="text-decoration: none;" href="/donor/donorlogin">Click here to login</a></p>
